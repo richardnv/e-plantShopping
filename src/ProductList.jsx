@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
+import { addItem } from './CartSlice';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
@@ -277,9 +278,9 @@ function ProductList() {
         <div className="product-grid">
             {plantsArray.map((category, index) => (
                 <div key={index}>
-                    <h1><div>{category.category}</div></h1>
+                    <h1><div className="category-name">{category.category}</div></h1>
                     <div className="product-list">
-                        {categor.plants.map((plant, plantIndex) => (
+                        {category.plants.map((plant, plantIndex) => (
                             <div className="product-card" key={plantIndex}>
                                 <img className="product-image" src={plant.image} alt={plant.name} />
                                 <div className="plant-title">{plant.name}</div>

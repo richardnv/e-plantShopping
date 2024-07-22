@@ -246,7 +246,7 @@ function ProductList() {
         e.preventDefault();
         setShowCart(false);
     };
-    const handeAddToCart = (product) => {
+    const handleAddToCart = (product) => {
         dispatch(addItem(product));
         setAddedToCart((prevState) => ({
             ...prevState,

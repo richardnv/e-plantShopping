@@ -245,7 +245,7 @@ function ProductList() {
         setShowCart(false); // Hide the cart when navigating to About Us
     };
     const handleContinueShopping = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setShowCart(false);
     };
     const handleAddToCart = (product) => {

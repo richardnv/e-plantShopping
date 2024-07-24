@@ -255,7 +255,8 @@ function ProductList() {
             ...prevState,
             [product.name]: true,
         }));
-    };
+    };    
+
       // Calculate total count of all products in the cart
     const calculateTotalCount = () => {              
         let totalCount = 0        
@@ -309,12 +310,10 @@ function ProductList() {
                                 <img className="product-image" src={plant.image} alt={plant.name} />
                                 <div className="plant-title">{plant.name}</div>
                                 <div className="plan-description">{plant.description}</div>
-                                <div className="plant-cost">{plant.cost}</div>       
-                                {!addedToCart? (
-                                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>                                
-                                ) : (
-                                    <button  className="product-button added-to-cart">Added to Cart</button>                                
-                                )}                                
+                                <div className="plant-cost">{plant.cost}</div>                                       
+                                <button  className={addedToCart[plant.name] ? "product-button added-to-cart" : "product-button"} onClick={() => handleAddToCart(plant)} disabled={addedToCart[plant.name]}>
+                                    {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
+                                </button>                                                                                           
                             </div>
                         ))}
                     </div>
